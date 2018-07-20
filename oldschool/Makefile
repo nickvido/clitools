@@ -1,9 +1,14 @@
-all: oldschool
+CC = gcc
+OBJS = oldschool.o
+LDLIBS = -lcurses
+PROG = oldschool
 
-oldschool: oldschool.o
-	gcc -lncurses -o oldschool oldschool.o
+all: $(PROG)
+
+$(PROG): $(OBJS)
+	$(CC) $(OBJS) -o $@ $(LDLIBS)
+
 oldschool.o: oldschool.c
-	gcc -lncurses -c oldschool.c
     
 clean:
-	rm oldschool oldschool.o
+	rm -f $(PROG) $(OBJS) 
