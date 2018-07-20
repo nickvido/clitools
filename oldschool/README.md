@@ -15,6 +15,7 @@ $ ./make install
 ## Run
 
 ```
+$ make
 $ ./oldschool
 ```
 
